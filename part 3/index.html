@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMS</title>
+</head>
+<body>
+
+    <!-- [GET] Send Request to get 100 POSTS -->
+    <form action="https://jsonplaceholder.typicode.com/posts" method="GET">
+        <button type="submit">Send GET Request</button>
+    </form>
+
+    <!-- [POST] Send Request to CREATE a new 101 POST -->
+    <form action="https://jsonplaceholder.typicode.com/posts" method="POST">
+        <div>
+            <label for="">Title</label>
+            <input type="text" name="title">
+        </div>
+        <div>
+            <label for="">Body</label>
+            <textarea name="body" cols="30" rows="10"></textarea>
+        </div>
+        <input type="hidden" name="userId" value="1">
+        <button type="submit">Send</button>
+    </form>
+    <br>
+    <hr>
+
+    <form action="">    
+        <input type="text" name="employeeID" required 
+            pattern="[A-Z]{2}[0-9]{4}"
+            placeholder="ID1111"        
+            title="Employee ID is two capital letters followed by four digits">   
+        <input type="submit" value="Submit">
+    </form>
+
+    
+    <form action="" method="GET">
+        <div>
+            <label for="test">
+                <input 
+                    type="text" id="test" name="name" 
+                    placeholder="Please type your name" required>
+            </label>
+        </div>
+        <div>
+            <label for="">Enter your password</label><br>
+            <input type="password" name="password" value="12345" readonly>
+        </div>
+
+        <div>
+            <label for="">Select food</label>
+            <select name="" id="" multiple>
+                <option value="0">Apple</option>
+                <option value="1">
+                    Kivi
+                </option>
+                <option value="2">Bananna</option>
+            </select>
+        </div>
+
+        <div>
+            <textarea name="" id="" cols="40" rows="5">Some text</textarea>
+        </div>
+
+        <div>
+            <label for="">Enter your age</label>
+            <input type="number" name="age" value="33" disabled>
+        </div>
+
+        <div>
+            <label for="">Range</label>
+            <input type="range" name="range" value="3" max="10" min="1" step="3">
+        </div>
+
+        <label for="m">Male</label>
+        <input type="radio" id="m" name="gender" value="male" checked>
+        <label for="f">Female</label>
+        <input type="radio" id="f" name="gender" value="female">
+
+        <h3>Skills:</h3>
+        <label for="html">HTML</label>
+        <input type="checkbox" id="html" name="skills" value="HTML" checked>
+        <label for="">CSS</label>
+        <input type="checkbox" name="skills" value="CSS" checked>
+        <label for="">JS</label>
+        <input type="checkbox" name="skills" value="JS">
+
+        <div>
+            <label for="">Enter your email</label><br>
+            <input type="email" name="email" autocomplete="off">
+        </div>
+
+        <hr>
+    
+        <!-- <button type="button">Button</button> -->
+        <button type="reset">Reset</button>
+        <button type="submit">Sumbit</button>
+    </form>
+
+</body>
+</html>
