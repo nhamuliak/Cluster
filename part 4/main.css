@@ -1,0 +1,68 @@
+/* #my-id | .class-name | tag (div) */
+
+/* #post .title {
+    color: red;
+} */
+
+/* .title {
+    color: rgb(11, 145, 145);
+}
+
+p[data-alt^="just"] {
+    color: yellowgreen;
+}
+
+.twit > p {
+    color: blue;
+}
+
+.post ~ p {
+    color: blueviolet;
+}
+
+.post + p {
+    color: brown;
+}
+
+.title {
+    color: pink;
+}
+
+.text {
+    font-size: 22px;
+    color: rgb(15, 190, 29);
+}
+.text.text-small {
+    font-size: 14px;
+    color: rgb(23, 150, 205);
+}
+
+.js-text {
+    color: violet;
+} */
+
+/* .post {
+    width: 500px;
+    box-shadow: 1px 1px 1px #e3e3e3;
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+span {
+    display: inline-block;
+    width: 100px;
+    background-color: rgb(240, 186, 116);
+    padding: 5px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    /* margin-top: 50px;
+    margin-left: 20px; */
+    margin: 15px 30px 5px 0; 
+    margin: 10px 10px 10px; 
+    margin: 10px 10px;
+    margin: 10px;
+}
