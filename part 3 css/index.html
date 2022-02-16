@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 2000px;
+        }
+
+        .float {
+            display: block;
+            width: 200px;
+            height: 200px;
+            background-color: rgb(12, 203, 210);
+            float: left;
+        }
+
+        .second {
+            background-color: burlywood;
+        }
+
+        .third {
+            background-color: rgb(104, 194, 84);
+        }
+
+        .wrapper {
+            position: relative;
+            margin: 300px auto;
+            max-width: 700px;
+            width: 100%;
+            border: 1px solid #000;
+            height: 1200px;
+        }
+
+        .box1, .box2, .inner {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+
+        .box1 {
+            position: relative;
+        }
+
+        .inner {
+            background-color: red;
+        }
+
+        .box2 {
+            top: 0;
+            right: 0;
+            background-color: cadetblue;
+        }
+
+        .news {
+            width: 180px;
+            height: 302px;
+            border: 2px dashed;
+            margin: 50px 0 200px;
+            padding: 8px;
+            overflow-y: scroll;
+        }
+
+        .name {
+            display: inline;
+            width: 80px;
+            height: 20px;
+            border: 1px solid;
+            margin: 30px 0 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <span class="name">Alex Ddsjndsdfio</span>
+
+    <p class="news">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur voluptatum nesciunt autem error mollitia, aperiam
+        cupiditate id ut placeat quas eaque, pariatur saepe, dolore rerum veritatis eligendi tempora! Optio laudantium
+        blanditiis culpa iusto provident veritatis doloremque error, ad asperiores perspiciatis fugiat nihil, quas repellat eum
+        fugit aperiam facilis aspernatur illum quisquam! Iste nam eaque laudantium inventore nesciunt quam aspernatur! Dicta
+        voluptas impedit soluta, aut ab quas recusandae laboriosam ad in dolorem, culpa et eaque similique magnam tempore quae
+        autem aperiam adipisci accusantium quidem odio blanditiis quia? Architecto ipsam soluta eos quis est? Quam culpa odio
+        hic id numquam eveniet ratione.
+    </p>
+    
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <div class="float first"></div>
+    <div class="float second"></div>
+    <div class="float third"></div>
+    <br>
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi, ad!</p>
+    <p>Some text ashfas f sajfhasf</p>
+
+    <div class="wrapper">
+        <div class="box1">
+            <div class="inner"></div>
+        </div>
+        <div class="box2"></div>
+    </div>
+
+</body>
+</html>
