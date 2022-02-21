@@ -1,0 +1,56 @@
+.text {
+    color: var(--primary);
+    border: var(--border-with) solid;
+    font-size: var(--primary-font-size);
+}
+
+.text {
+    /* border: 5px solid #000; */
+    border-width: 5px;
+}
+
+.text span {
+    font-size: .5em;
+    background-position: 20% 40%;
+    /* background-image: url(''); */
+}
+
+.post {
+    width: 400px;
+    margin: 30px auto;
+    padding: 10px;
+    box-shadow: 8px 0px 5px rgb(0 0 0 / 20%);
+    border-left: 8px solid #ccc;
+    background: rgb(255 0 0 / 20%);
+}
+
+.post:hover .more a {
+    opacity: 1;
+}
+
+.post h2 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.post p {
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.post img {
+    max-width: 100px;
+}
+
+.more {
+    text-align: right;
+}
+
+.more a {
+    transition: all .3s linear;
+    opacity: 0;
+}
+
+.post:first-child {
+    transform: rotate(45deg);
+}
