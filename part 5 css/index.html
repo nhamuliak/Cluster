@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLEX</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .col {
+            width: 240px;
+            min-height: 100px;
+            background-color: blueviolet;
+        }
+        .col:first-child { background-color: turquoise;}
+        .col:nth-child(2) {background-color: chocolate;}
+        .col:last-child {background-color: brown;}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="col">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, ut?</p>
+        </div>
+        <div class="col">
+            <div>
+                <p>Lorem ipsum dolor sit.</p>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+        <div class="col">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate fugiat laboriosam eligendi temporibus ullam quia perspiciatis aspernatur maiores! Delectus rerum, aliquid quibusdam, beatae maiores veritatis neque, tenetur quidem dolores praesentium voluptas? Esse repellat illo cumque odit, blanditiis maiores minima! Soluta, illum exercitationem, iusto atque amet neque laudantium suscipit, doloremque aspernatur facere tenetur cumque labore harum autem molestiae? Enim, voluptatum cupiditate?</p>
+        </div>
+        <div class="col">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quis, beatae illum sunt, optio harum quisquam praesentium laudantium eius, voluptas facilis. Harum sed molestias, vel debitis tempore ratione aperiam eos.</p>
+        </div>
+    </div>
+    
+</body>
+</html>
