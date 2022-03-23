@@ -1,0 +1,85 @@
+@mixin transform($value) {
+    transform: $value;
+    -ms-transform: $value;
+    -o-transform: $value;
+    -webkit-transform: $value;
+}
+
+@mixin flex {
+    display: flex;
+    display: -ms-flexbox;
+}
+
+
+@mixin max-width($width) {
+    @media only screen and (max-width: $width) {
+        @content;
+    }
+}
+
+@mixin min-width($width) {
+    @media only screen and (min-width: $width) {
+        @content;
+    }
+}
+
+%base-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.gallery {
+    @extend %base-flex;
+    justify-content: center;
+}
+
+.post {
+    @extend %base-flex;
+    background-color: $theme;
+    font-size: $size;
+    color: #000;
+    padding: 10px;
+    width: 100px;
+    margin-left: 100px;
+    @include transform(scale(1.2));
+    @include flex();
+    width: 100% - 30;
+
+    @include max-width(1200px) {
+        background-color: aqua;
+    }
+
+    @include max-width(700px) {
+        background-color: red;
+    }
+
+    .title {
+        font-size: 1.2em;
+        color: green;
+        transition: all .3s;
+
+        &:hover {
+            color: violet;
+        }
+
+        .sub-title {
+            background-color: #ccc;
+        }
+    }
+
+    .text {
+        line-height: 1.4;
+        text-transform: capitalize;
+    }
+
+    img {
+        width: 100px;
+    }
+
+    .date {
+        font-size: 12px;
+        color: #666;
+    }
+}
