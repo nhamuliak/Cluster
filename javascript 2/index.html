@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let x = 2;
+        // x = x + 4
+        x += 4;
+
+        let y = 10;
+        y = y / 2;
+        // y /= 2;
+
+        // y += 3;
+
+        let c = (2 + 8) * 4;
+        // console.log(c);
+
+        // const years = prompt('How old are you?');
+        // console.log('45' + 15);
+        // console.log(+'45' + 15);
+        // console.log(parseInt('353', 12));
+
+        // alert('Yor are ' + years + ' old.');
+
+        // const isGuest = confirm('Are you a guest?');
+        // console.log(isGuest);
+
+        // const result = prompt('ES6 was developed in...?');
+        // console.log(result, typeof result);
+
+        // let gender;
+        // const genderResult = 'male';
+
+        // if (genderResult === 'male') {
+        //     gender = 'male';
+        // } else {
+        //     gender = 'female';
+        // }
+
+        const genderResult = 'female';
+        const gender = genderResult === 'male'
+            ? 'male'
+            : 'female';
+
+        // console.log(gender);
+
+        const isDark = false;
+        let theme = isDark ? 'black' : 'white';
+        console.log(theme);
+
+        const vector = -1;
+        const z = vector === -1 ? -1 : 1;
+
+        const abc = 'abc';
+        const def = 'def';
+
+        // '', 0, false, null, undefined
+
+        // const f = 4;
+        // if (f !== 2) {
+        //     console.log('not f');
+        // } else {
+        //     console.log('yes f');
+        // }
+
+        // if (abc !== def) {
+        //     alert(abc + def);
+        // } else {
+        //     alert('Not matched!');
+        // }
+
+        // if (result === '2014') {
+        //     alert('Yes. Corret!');
+        // } else if (result === '2015') {
+        //     alert('No. But almost corret!');
+        // } else {
+        //     alert('No!');
+        // }
+
+        const password = prompt('Please enter your password.');
+
+        if (password) {
+            if (password.length < 3) {                    
+                alert('Less than 3 symbols!');
+            } else if (!/[A-Z]{1}/.test(password)) {
+                alert('Should be at least two uppercase character');
+            } else {
+                alert('Fine!');
+            }
+        }
+
+    </script>
+
+</body>
+</html>
