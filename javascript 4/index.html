@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function Car(name, color, speed) {
+            this.name = name;
+            this.color = color;
+            this.speed = speed;
+            this.wheel = 4;
+            this.drive = function() {
+                console.log('Let\'s drive!');
+            }
+
+            // return '';
+            return {name: 'Just a joke'};
+        }
+
+        const bmw = new Car('BMW 3', 'black', 280);
+        const audi = new Car('Audi', 'blue', 220);
+
+        bmw.name = 'BMW 6';
+
+        console.log('bmw: ', bmw);
+        console.log('audi: ', audi);
+
+        // function abc(param1, param2, num) {
+        //     console.log('params: ', param1, param2, num, arguments);
+        // }
+
+        // abc('Hello', 'Test', 123, false, {});
+
+        // const car = {
+        //     name: 'Audi',
+        //     color: 'black',
+        //     speed: 220,
+        //     valueOf: function() {
+        //         return this
+        //     }
+        // }
+
+        // const car2 = car.valueOf();
+        // car.name = 'BMW';
+
+
+        // const names = ['Mary', 'Peter', 'John'];
+
+        // names.findIndex(function(name) {
+        //     console.log(name === 'Peter');
+        // })
+
+        // var arr = [1, 2, 5];
+        // arr.splice(-1, 0, 3, 4);
+        // console.log( arr ); // результат: 1,2,3,4,5
+
+        // var names = 'Mary, Peter, John';
+
+        // console.log(names.split(', ').join(':'));
+        // names.split(', ').forEach(function(name) {
+        //     console.log( 'Morning ' + name );
+        // });
+
+        // for (var i = 0; i < arr.length; i++) {
+        //     console.log( 'Hello ' + arr[i] );
+        // }
+
+        // const matrix = [
+        //     ['', '', ''],
+        //     ['x', '0', 'x'],
+        //     ['', '', '0']
+        // ]
+
+        // for (let row = 0; row < matrix.length; row++) {
+        //     for (let col = 0; col < matrix[row].length; col++) {
+        //         console.log(row, col, matrix[row][col]);
+        //     }
+        // }
+
+        const posts = [];
+        for (let i = 1; i <= 10; i++) {
+            posts.push({
+                title: 'Test ' + i,
+                description: 'Lorem text'
+            });
+        }
+        console.log(posts);
+
+
+        // for (let post of posts) {
+        //     console.log(post);
+        // }
+        // posts.forEach(function(post, index) {
+        //     console.log('post: ', index, post);
+        // })
+        // for (let i in posts) {
+        //     console.log(i, posts[i]);
+        // }
+        // for (let i = 0; i < posts.length; i++) {
+        //     console.log('for: ', i, posts[i]);
+        // }
+
+
+        // new Array([])
+        // const arr = ['as', 2324, true, {}, [], null];
+        // arr.push('Vasya');
+        // console.log(arr);
+
+
+        // deepClone()
+    //     const person = {
+    //         name: 'Peter',
+    //         age: 32,
+    //         address: {
+    //             city: 'IF',
+    //             street: 'Vashinkov 33'
+    //         },
+    //         languages: ['en', 'fr'],
+    //         sayHi: function() {
+    //             return 'Hello ' + this.name;
+    //         }
+    //     };
+
+
+        // const languages = 'en fr de';
+
+        // const languages = {
+        //     en: 'en',
+        //     fr: 'fr'
+        // }  
+
+    //    console.log( person.sayHi());
+
+        // const admin = Object.assign({}, person);
+
+        // for (let key in person) {
+        //     console.log(key);
+        //     admin[key] = person[key];
+        // }
+        
+        // admin.name = 'Pavel';
+        // admin.address.city = 'NY';
+
+        // console.log(person);
+        // console.log(admin);
+        
+        // delete person.age;
+        // person.languages = 'english';
+
+        // const post = {
+        //     title: '',
+        //     description: '',
+        //     date: '',
+        //     image: ''
+        // }
+
+        // const key = 'languages';
+        // console.log(person);
+        // console.log(person[key]);
+        
+
+    </script>
+    
+</body>
+</html>
