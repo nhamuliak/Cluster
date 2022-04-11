@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP</title>
+</head>
+<body>
+    
+    <script>
+
+        function test() {
+            return new Promise(function(success, abort) {
+                if (Math.random() > .5) {
+                    success('DONE!');
+                } else {
+                    abort('ISSUE');
+                }
+            })
+        }
+
+        test()
+            .then(function(param) {
+                console.log(param);
+            })
+            .catch(function(param) {
+                console.log(param);
+            })
+
+        function abc() {
+            return Promise.resolve('Error ???');
+            // return Promise.reject('Error ???');
+        }
+
+        abc().then(function() {
+            console.log('abc work!');
+        }).catch(function(m) {
+            console.log('m: ', m);
+        })
+
+        // new Promise
+        function getName(name) {
+            return Promise.resolve(name);
+        }
+
+        const promise = getName('Misha');
+
+
+        function fetchAPI(method, url, body) {
+            return new Promise(function(resolve, reject) {
+                const xhr = new XMLHttpRequest();
+
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4) {
+                        if ( xhr.status === 200 || xhr.status === 201) {
+                            resolve(xhr.responseText);
+                            // console.log(JSON.parse(xhr.responseText));
+                        } else {
+                            reject({
+                                message: 'Something went wrong!',
+                                status: 404,
+                                data: {}
+                            });
+                            // console.error('Something went wrong!');
+                        }
+                    }
+                }
+
+                xhr.open(method, url);
+
+                setTimeout(function() {
+                    if (body) {
+                        xhr.send(JSON.stringify(body));
+                    } else {
+                        xhr.send();
+                    }
+                }, 2000);
+            });
+        }
+
+        // GET
+        fetchAPI('GET', 'https://jsonplaceholder.typicode.com/posts')
+            .then(function(response) {
+                return JSON.parse(response);
+            })
+            .then(function(data) {
+                // console.log('data: ', data);
+                // for (let post of data) {
+                //     console.log(post);
+                // }
+            })
+            .catch(function(err) {
+                console.log(err.status);
+            })
+
+
+        // POST
+        fetchAPI('POST', 'https://jsonplaceholder.typicode.com/posts', {
+            title: 'my new post',
+            body: 'some text',
+            userId: 1,
+        })
+            .then(function(response) {
+                return JSON.parse(response);
+            })
+            .then(function(post) {
+                console.log('Create post: ', post);
+            })
+            .catch(function(err) {
+                console.log(err.status);
+            })
+        
+    </script>
+
+</body>
+</html>
