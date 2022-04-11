@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 5</title>
+
+    <style>
+        .wrapper {
+            background: blue !important;
+        }
+    </style>
+</head>
+<body>
+    
+    <input type="text" id="text">
+
+    <button id="upload">Upload</button>
+
+    <div id="some-id"></div>
+    
+    <section class="section-post" id="section-post">
+        <article class="post"></article>
+        <article class="post"></article>
+        <article class="post"></article>
+        <article class="post"></article>
+    </section>
+
+    <div class="image"></div>
+    <div class="image"></div>
+    <div class="image"></div>
+
+    <script>
+
+        const input = document.getElementById('text');
+        const upload = document.getElementById('upload');
+        const sectionPost = document.getElementById('section-post');
+        const TIME = 1000 * 5; // * 60 * 24 * 7;
+
+        // window.requestAnimationFrame
+
+        input.addEventListener('input', function(event) {
+            console.log('value: ', this.value);
+        });
+
+        upload.addEventListener('click', function(event) {
+            
+            setTimeout(uploadMovies, TIME);
+            // setTimeout(function() {
+            //     uploadMovies();
+            // }, 30000);
+
+        });
+
+        const movies = [
+            { title: 'Some text', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, veritatis.', date: '22/02/2021' }, 
+            { title: 'Some text', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, veritatis.', date: '22/02/2021' }, 
+            { title: 'Some text', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, veritatis.', date: '22/02/2021' }
+        ];
+
+        
+        function uploadMovies() {
+            for (let movie of movies) {
+                sectionPost.innerHTML += renderMovie(movie);
+            }
+        }
+
+        uploadMovies();
+
+        function renderMovie(movie) {
+            return '<div class="post">' +
+                        '<h3 class="title">'+ movie.title +'</h3>' +
+                        '<p>'+ movie.description +'</p>' +
+                        '<span>'+ movie.date +'</span>' +
+                    '</div>';
+        }
+
+        // const divElem = document.createElement('div');
+        // divElem.classList.add('another-post');
+        // divElem.style.background = 'violet';
+        // divElem.style.fontSize = '2em';
+        // divElem.style.color = 'black';
+        // divElem.innerHTML = '<p>Lorem text 12345...</p>';
+
+        // const divElem2 = document.createElement('div');
+        // divElem2.classList.add('another-post');
+        // divElem2.innerText = '<span>Some text here...</span>';
+
+        // sectionPost.prepend(divElem2);
+        // sectionPost.append(divElem);
+
+
+        // console.log(document.body);
+
+        // const elem = document.getElementById('some-id');
+        // console.log('elem: ', elem);
+
+        // document.body.style.background = 'green';
+        // document.body.classList.add('wrapper');
+
+        // document.head.nextSibling
+
+        // const posts = getElemByClass('post');
+
+        // posts.forEach(function(elem, index) {
+        //     if (index % 2 === 0) {
+        //         elem.classList.add('odd');
+        //         console.log('elem: ', elem);
+        //     } else {
+        //         console.log(elem.parentElement.getElementsByClassName('odd'));
+        //     }
+            
+        // })
+
+        // getElemByClass('image');
+
+        // function getElemByClass(className) {
+        //     const res = document.querySelectorAll('.' + className);
+        //     console.log(res);
+
+        //     return res;
+        // }
+    </script>
+    
+</body>
+</html>

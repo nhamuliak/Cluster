@@ -8,28 +8,93 @@
 </head>
 <body>
 
+    <div class="post">
+        <h3 class="title"></h3>
+        <p></p>
+        <span></span>
+    </div>
+
     <script>
 
-        function Car(name, color, speed) {
-            this.name = name;
-            this.color = color;
-            this.speed = speed;
-            this.wheel = 4;
-            this.drive = function() {
-                console.log('Let\'s drive!');
+        const user = {
+            name: 'Fred',
+            surname: 'Doe',
+            sayHi: function() {
+                console.log('Hello ' + this.name);
             }
-
-            // return '';
-            return {name: 'Just a joke'};
         }
 
-        const bmw = new Car('BMW 3', 'black', 280);
-        const audi = new Car('Audi', 'blue', 220);
+        const user2 = { name: 'Vasiliy' };
 
-        bmw.name = 'BMW 6';
+        function sayHello(greeting) {
+            console.log(greeting + ' ' + this.name);
+        }
 
-        console.log('bmw: ', bmw);
-        console.log('audi: ', audi);
+        sayHello.call(user, 'Hello');
+        sayHello.apply(user2, ['Morning']);
+        sayHello.bind(user)('Bonjur');
+
+        // user.sayHi.;
+
+        Object.defineProperty(user, 'fullName', {
+            get: function() {
+                return this.name + ' ' + this.surname;
+            },
+            set: function(value) {
+                if (typeof value === 'string') {
+                    const name = value.split(' ')[0];
+                    const surname = value.split(' ')[1];
+
+                    this.name = name;
+                    this.surname = surname;
+                }
+            }
+        })
+
+
+        // var user
+        // =
+        // {
+        // firstName:
+        // "John
+        // ",
+        // surname:
+        // "Doe
+        // "
+        // }
+        // Object.defineProperty
+        // (user,
+        // "fullName
+        // ",
+        // {
+        // get: function()
+        // {
+        // return this.firstName
+        // + ' ' + this.surname;
+
+        // },
+
+        // function Car(name, color, speed) {
+        //     this.name = name;
+        //     this.color = color;
+        //     this.speed = speed;
+        //     this.wheel = 4;
+        //     this.drive = function() {
+        //         console.log('Let\'s drive!');
+        //     }
+
+        //     // return '';
+        //     // return {name: 'Just a joke'};
+        // }
+
+        // const bmw = new Car('BMW 3', 'black', 280);
+        // const audi = new Car('Audi', 'blue', 220);
+
+        // bmw.name = 'BMW 6';
+
+        // console.log('bmw: ', bmw);
+        // console.log('audi: ', audi);
+
 
         // function abc(param1, param2, num) {
         //     console.log('params: ', param1, param2, num, arguments);
@@ -90,7 +155,7 @@
                 description: 'Lorem text'
             });
         }
-        console.log(posts);
+        // console.log(posts);
 
 
         // for (let post of posts) {
