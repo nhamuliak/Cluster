@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <h2>Title</h2>
+        <p>Text lorem...</p>
+        <span>Date: 12/23/2022</span>
+    </div>
+
+    <script>
+        // var names = '';
+        // var names = [];
+
+        // ES6, ES7, ES8
+
+        // (depreacated -> var) const let
+
+        // let users = [];
+        // users.slice()
+        // users = [];
+        // let name = '';
+        // name = 'John';
+
+
+        const comments = [
+            { id: 1, text: 'Comment 1' },
+            { id: 2, text: 'Comment 2' }
+        ];
+        
+        const foundComment = comments.find(comment => comment.id === 2)?.text;
+        // console.log('foundComment: ', foundComment);
+
+        // comments.forEach((comment, index) => console.log('comment: ', comment));
+        
+
+        const post = {
+            id: 1,
+            title: 'Title',
+            description: '',
+            comments: [
+                { id: 1, text: 'Comment 1' },
+                { id: 2, text: 'Comment 2' }
+            ],
+            getComments: function() {
+                setTimeout(() => console.log(this.comments), 1000);
+                // var self = this;
+                // setTimeout(function () {
+                //     console.log(this.comments);
+                //     // return this.comments;
+                // }.bind(this), 2000);
+            }
+        }
+
+        const developer = ['Alex', 'C++', 23, 'Middle'];
+        const [ name, lang, age, level ] = developer;
+        const dev = { name, lang, age, level };
+
+        /**
+         * pragrammer = {Object}
+         * **/
+        function getDeveloperInfo([ name, lang, level, age ]) {
+            return 'dev info is: ' + name + ' ' + level + ' ' + lang;
+        }
+        // console.log(getDeveloperInfo(developer));
+
+        function getDeveloperInfo2({ level, name, lang }) {
+            return 'dev2 info is: ' + name + ' ' + level + ' ' + lang;
+        }
+        // console.log(getDeveloperInfo2(dev));
+
+        // developer[1];
+
+        // console.log('developer: ', dev, name, level, lang);
+        
+
+        const form = { title: 'Title 23', status: 'opened', description: '', color: '' };
+
+        const { title, status } = form;
+        
+        const body = { title, status }
+
+        // console.log('body: ', body);
+
+
+        // map, filter, reduce, find, 
+        // [1, 2, 3, 4]
+
+        const arr = [1, 2, 3, 4];
+        function calculateSum(numbers = [], ...other) {
+            console.log('other: ',  other);
+            return numbers.reduce((acc, number) => acc + number, 0);
+        }
+
+        // console.log(calculateSum(arr, ...developer));
+
+
+        // const newDev = developer.concat(['male', 'IF']);
+        const newDev = [...developer, 'male', 'IF'];
+        console.log('newDev: ', newDev);
+
+        // const extenedDev = {
+        //     ...dev,
+        //     gendere: 'male',
+        //     city: 'IF'
+        // };
+
+        const extenedDev = Object.assign({}, dev, {
+            gendere: 'male',
+            city: 'IF'
+        });
+
+        dev.name = 'Pasha';
+
+        const arrSet = new Set([1, 2, 4, 4, 2, 6, 7, 1, 1, 6]);
+        // console.log(arrSet);
+
+        const api = 'http://localhost:8080/api';
+        const http = {};
+
+        // let isMovies;
+        // console.log(`${api}/${isMovies ? 'movies' : 'films'}`);
+
+        // http.get(`${api}/movies`);
+
+        // function renderPostTemplate(post) {
+        //     return `
+        //         <div>
+        //             <h2>${post.title}</h2>
+        //             <p>${post.text}</p>
+        //             <span>Date: ${post.date}</span>
+        //         </div>
+        //     `;
+        // }
+
+        // return '<div class="post">' +
+        //                 '<h3 class="title">'+ movie.title +'</h3>' +
+        //                 '<p>'+ movie.description +'</p>' +
+        //                 '<span>'+ movie.date +'</span>' +
+        //             '</div>';
+
+        // console.log('extenedDev: ', extenedDev);
+
+        // const user = { name: 'Pavel', age: 32 };
+        // const { name, age } = user;
+
+        // console.log('user data: ', name, age);
+
+
+        // () => {}
+        function Car(name) {
+            this.name = name;
+        }
+
+        Car.prototype.run = function() {
+            console.log('I am driving to work...');
+        }
+
+        const bmw = new Car('BMW');
+
+        Object.prototype.run = function() {
+            console.log('I am from global Object');
+        }
+
+        class Vehicle {
+            constructor(wheels) {
+                this.wheels = wheels;
+            }
+
+            // run() {
+            //     console.log('I am rolling...');
+            // }
+        }
+
+        class Cycle extends Vehicle {
+            constructor(name) {
+                super(3);
+                this.name = name;
+            }
+
+            // run() {
+            //     console.log('I am driving home...');
+            // }
+        }
+        
+        const cycle = new Cycle('BMX');
+
+    </script>
+    
+</body>
+</html>
