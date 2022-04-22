@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.product-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    line-height: 30px;
+    background-color: #ccc;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.product.active {
+    background-color: white !important;
+    box-shadow: 1px 1px 5px #ccc;
+}
+
+.product-name {
+    font-size: 1.4rem;
+}
+
+.product-code {
+    margin-top: 10px;
+}
